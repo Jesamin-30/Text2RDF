@@ -4,25 +4,26 @@ from config import EX_NAMESPACE
 
 EX = Namespace(EX_NAMESPACE)
 
-def build_rdf_graph(triples, entity_links, predicate_mappings):
+
+def build_rdf_graph(triples, entities, predicates):
     g = Graph()
     g.bind("ex", EX)
 
-    for line in triples:
+    for s, p, o in triples:
         try:
-            s, p, o = line.strip("()").split(",", 2)
-            s = s.strip().strip('"').replace(" ", "_")
-            p = p.strip().strip('"').replace(" ", "_")
-            o = o.strip().strip('"').replace(" ", "_")
+            # Local URIS
+            s_LOCAL = s.replace(" ", "_")
+            p_LOCAL = p.replace(" ", "_")
+            o_LOCAL = o.replace(" ", "_")
 
             # URIs si están linkeadas
-            s_uri = URIRef(entity_links.get(s, f"{EX_NAMESPACE}{s}"))
-            p_uri = URIRef(predicate_mappings.get(p, f"{EX_NAMESPACE}{p}"))
-            o_uri = URIRef(entity_links.get(o, f"{EX_NAMESPACE}{o}"))
+            s_uri = URIRef(entities.get(s, f"{EX_NAMESPACE}{s_LOCAL}"))
+            p_uri = URIRef(predicates.get(p, f"{EX_NAMESPACE}{p_LOCAL}"))
+            o_uri = URIRef(entities.get(o, f"{EX_NAMESPACE}{o_LOCAL}"))
 
             g.add((s_uri, p_uri, o_uri))
         except Exception as e:
-            print(f"Error en línea: {line} - {e}")
+            print(f"Error en línea: {s, p, o} - {e}")
             continue
 
     return g

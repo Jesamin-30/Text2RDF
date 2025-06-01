@@ -2,7 +2,8 @@
 # import openai
 import requests
 import spacy
-from config import DBPEDIA_ENDPOINT, LOV_API
+from urllib.parse import quote
+from config import SPOTLIGHT_API_URL, BABELFY_API_URL, BABELFY_API_KEY, LOV_API
 
 nlp = spacy.load("en_core_web_sm")
 # export OPENAI_API_KEY="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"
@@ -51,23 +52,44 @@ Do NOT return anything else.
     return ask_the_llm(prompt)
 
 
-def entity_linking_dbpedia(text):
+def get_babelfy_url(text: str) -> str:
+    return BABELFY_API_URL + f"text={quote(text)}&lang=EN&key={BABELFY_API_KEY}"
+
+
+def get_spotlight_url(text: str) -> str:
+    return SPOTLIGHT_API_URL + f"text={quote(text)}"
+
+
+def entity_linking_spotlight(text):
     headers = {"accept": "application/json"}
     params = {"text": text}
     try:
-        print(DBPEDIA_ENDPOINT+f"text={text}")
-        print(headers)
-        print(params)
         response = requests.get(
-            DBPEDIA_ENDPOINT,
+            SPOTLIGHT_API_URL,
             headers=headers,
             params=params,
-            verify=False
+            verify=True
         )
-        print(response.request.url)
-
-        print("response", response)
         return {r['surfaceForm']: r['URI'] for r in response.json().get('Resources', [])}
+    except Exception as error:
+        print(error)
+        return {}
+
+
+def entity_linking_babelfy(text):
+    try:
+        headers = {"accept": "application/json"}
+        response = requests.get(get_babelfy_url(text), headers=headers)
+
+        if (response.status_code == 200):
+            data = response.json()
+            max_resource = max(
+                data, key=lambda resource: resource['globalScore'])
+            best_resource = max_resource['DBpediaURL'] if data != [] else ''
+
+            return best_resource
+
+        return None
     except Exception as error:
         print(error)
         return {}
@@ -75,10 +97,11 @@ def entity_linking_dbpedia(text):
 
 def predicate_mapping_lov(predicate):
     try:
-        response = requests.get(
-            f"{LOV_API}?q={predicate}&type=property", timeout=5)
-        data = response.json()
+        url = f"{LOV_API}?q={predicate}&type=property"
+        response = requests.get(url)
+        data = response.json()["results"]
         if data:
-            return data[0].get("uri")
-    except:
+            return data[0].get("uri")[0]
+    except Exception as error:
+        print(error)
         return None
