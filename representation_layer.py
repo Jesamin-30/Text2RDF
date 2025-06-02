@@ -21,7 +21,8 @@ def build_rdf_graph(triples, entities, predicates):
             p_uri = URIRef(predicates.get(p, f"{EX_NAMESPACE}{p_LOCAL}"))
             o_uri = URIRef(entities.get(o, f"{EX_NAMESPACE}{o_LOCAL}"))
 
-            g.add((s_uri, p_uri, o_uri))
+            triple = (s_uri, p_uri, o_uri)
+            g.add(triple)
         except Exception as e:
             print(f"Error en línea: {s, p, o} - {e}")
             continue

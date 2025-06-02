@@ -1,0 +1,251 @@
+[
+    {
+        "prefixedName": [
+            "crm:P98i_was_born"
+        ],
+        "vocabulary.prefix": [
+            "crm"
+        ],
+        "uri": [
+            "http://www.cidoc-crm.org/cidoc-crm/P98i_was_born"
+        ],
+        "metrics.occurrencesInDatasets": [
+            0
+        ],
+        "metrics.reusedByDatasets": [
+            0
+        ],
+        "type": "property",
+        "score": 0.5555555,
+        "highlight": {
+            "http://www.w3.org/2000/01/rdf-schema#label@en": [
+                "<b>was</b> <b>born</b>"
+            ],
+            "localName.ngram": [
+                "P98i_was_born"
+            ]
+        }
+    },
+    {
+        "prefixedName": [
+            "dcterms:modified"
+        ],
+        "vocabulary.prefix": [
+            "dcterms"
+        ],
+        "uri": [
+            "http://purl.org/dc/terms/modified"
+        ],
+        "metrics.occurrencesInDatasets": [
+            2434970
+        ],
+        "metrics.reusedByDatasets": [
+            113
+        ],
+        "type": "property",
+        "score": 0.46321085,
+        "highlight": {
+            "http://www.w3.org/2000/01/rdf-schema#comment@en": [
+                "Date on which the resource <b>was</b> changed."
+            ]
+        }
+    },
+    {
+        "prefixedName": [
+            "ecrm:P98i_was_born"
+        ],
+        "vocabulary.prefix": [
+            "ecrm"
+        ],
+        "uri": [
+            "http://erlangen-crm.org/current/P98i_was_born"
+        ],
+        "metrics.occurrencesInDatasets": [
+            0
+        ],
+        "metrics.reusedByDatasets": [
+            0
+        ],
+        "type": "property",
+        "score": 0.44854003,
+        "highlight": {
+            "http://www.w3.org/2000/01/rdf-schema#label@en": [
+                "P98 <b>was</b> <b>born</b>"
+            ],
+            "localName.ngram": [
+                "P98i_was_born"
+            ]
+        }
+    },
+    {
+        "prefixedName": [
+            "whois:born"
+        ],
+        "vocabulary.prefix": [
+            "whois"
+        ],
+        "uri": [
+            "http://www.kanzaki.com/ns/whois#born"
+        ],
+        "metrics.occurrencesInDatasets": [
+            0
+        ],
+        "metrics.reusedByDatasets": [
+            0
+        ],
+        "type": "property",
+        "score": 0.2988026,
+        "highlight": {
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                "<b>Born</b>"
+            ],
+            "localName.ngram": [
+                "<b>born</b>"
+            ]
+        }
+    },
+    {
+        "prefixedName": [
+            "dbpedia-owl:birthPlace"
+        ],
+        "vocabulary.prefix": [
+            "dbpedia-owl"
+        ],
+        "uri": [
+            "http://dbpedia.org/ontology/birthPlace"
+        ],
+        "metrics.occurrencesInDatasets": [
+            5988
+        ],
+        "metrics.reusedByDatasets": [
+            4
+        ],
+        "type": "property",
+        "score": 0.21398136,
+        "highlight": {
+            "http://www.w3.org/2000/01/rdf-schema#comment@en": [
+                "where the person <b>was</b> <b>born</b>"
+            ]
+        }
+    },
+    {
+        "prefixedName": [
+            "sim:element"
+        ],
+        "vocabulary.prefix": [
+            "sim"
+        ],
+        "uri": [
+            "http://purl.org/ontology/similarity/element"
+        ],
+        "metrics.occurrencesInDatasets": [
+            1532874
+        ],
+        "metrics.reusedByDatasets": [
+            2
+        ],
+        "type": "property",
+        "score": 0.17366827,
+        "highlight": {
+            "vocabulary.http://purl.org/dc/terms/description@en": [
+                " things. Although this ontology <b>was</b> designed with music"
+            ]
+        }
+    },
+    {
+        "prefixedName": [
+            "lib:placeOfPublication"
+        ],
+        "vocabulary.prefix": [
+            "lib"
+        ],
+        "uri": [
+            "http://purl.org/library/placeOfPublication"
+        ],
+        "metrics.occurrencesInDatasets": [
+            1342452
+        ],
+        "metrics.reusedByDatasets": [
+            1
+        ],
+        "type": "property",
+        "score": 0.16586918,
+        "highlight": {
+            "http://www.w3.org/2000/01/rdf-schema#comment@en": [
+                "This is the place where the schema:CreativeWork <b>was</b> published."
+            ]
+        }
+    },
+    {
+        "prefixedName": [
+            "prov:used"
+        ],
+        "vocabulary.prefix": [
+            "prov"
+        ],
+        "uri": [
+            "http://www.w3.org/ns/prov#used"
+        ],
+        "metrics.occurrencesInDatasets": [
+            508
+        ],
+        "metrics.reusedByDatasets": [
+            33
+        ],
+        "type": "property",
+        "score": 0.1653083,
+        "highlight": {
+            "http://www.w3.org/2000/01/rdf-schema#comment@en": [
+                "A prov:Entity that <b>was</b> used by this prov:Activity"
+            ]
+        }
+    },
+    {
+        "prefixedName": [
+            "schema:birthPlace"
+        ],
+        "vocabulary.prefix": [
+            "schema"
+        ],
+        "uri": [
+            "http://schema.org/birthPlace"
+        ],
+        "metrics.occurrencesInDatasets": [
+            0
+        ],
+        "metrics.reusedByDatasets": [
+            0
+        ],
+        "type": "property",
+        "score": 0.16053744,
+        "highlight": {
+            "http://www.w3.org/2000/01/rdf-schema#comment": [
+                "The place where the person <b>was</b> <b>born</b>."
+            ]
+        }
+    },
+    {
+        "prefixedName": [
+            "sim:weight"
+        ],
+        "vocabulary.prefix": [
+            "sim"
+        ],
+        "uri": [
+            "http://purl.org/ontology/similarity/weight"
+        ],
+        "metrics.occurrencesInDatasets": [
+            766518
+        ],
+        "metrics.reusedByDatasets": [
+            3
+        ],
+        "type": "property",
+        "score": 0.14335261,
+        "highlight": {
+            "vocabulary.http://purl.org/dc/terms/description@en": [
+                " things. Although this ontology <b>was</b> designed with music"
+            ]
+        }
+    }
+]

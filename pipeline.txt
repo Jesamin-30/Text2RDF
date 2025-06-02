@@ -1,0 +1,20 @@
+Paper:
+
+Extraccion de tripletas de documentos no estructurados.
+Para la extraccion tripletas se tomo en cuenta el siguiente Pipeline:
+    1: Lectura del texto
+    2: Extensión del texto:
+        - Extensión de pronombres a sus formas normales
+        - Extender contracciones del idioma
+    3: Separar el documento completo en oraciones.
+    4: Iterar sobre las oraciones para extraer las tripletas de una fuente pequeña y no todo el documento. LLM
+    5: Guardar las entidades como sujeto y objeto para luego buscar sus URIS correspondientes. De la misma manera para los predicados.
+    6: Buscar los URIS de las entidades usando Babelfy.
+    7: Buscar los URIS de los predicados en Linked Open Vocabularies.
+    8: Mapear las entidades y predicados con sus respectivos URIS.
+    9: Crear un grafo RDF usando RDFLib.
+
+Este paper aporta:
+    - Uso de LLM para la deteccion de entidades en un documento.
+    - Uso de herramientas para vincular una entidad con su URI.
+    - Validar si los URIS devueltos son lo mas parecidos, usando la distancia de Levenshtein.

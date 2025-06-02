@@ -1,7 +1,7 @@
 # knowledge_extraction.py
-# import openai
-import requests
 import spacy
+import requests
+import Levenshtein
 from urllib.parse import quote
 from config import SPOTLIGHT_API_URL, BABELFY_API_URL, BABELFY_API_KEY, LOV_API
 
@@ -88,11 +88,29 @@ def entity_linking_babelfy(text):
             best_resource = max_resource['DBpediaURL'] if data != [] else ''
 
             return best_resource
-
         return None
     except Exception as error:
         print(error)
-        return {}
+        return None
+
+
+def get_levenshtein(wordA, wordB):
+    dist_calc = Levenshtein.distance(wordA, wordB)
+    # print("distance: ", wordA, wordB, dist_calc)
+    return dist_calc
+
+
+def get_most_similar(predicate, results):
+    predicateURI = None
+    distance = 1000
+    for res in results:
+        uri = res["uri"][0]
+        temp = get_levenshtein(predicate, uri.rsplit('/', 1)[1])
+        if (temp < distance):
+            distance = temp
+            predicateURI = uri
+
+    return predicateURI
 
 
 def predicate_mapping_lov(predicate):
@@ -101,7 +119,9 @@ def predicate_mapping_lov(predicate):
         response = requests.get(url)
         data = response.json()["results"]
         if data:
-            return data[0].get("uri")[0]
+            uri = get_most_similar(predicate, data)
+            return uri
+        return None
     except Exception as error:
         print(error)
         return None
