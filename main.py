@@ -73,7 +73,7 @@ if __name__ == "__main__":
         description='Run program'
     )
 
-    parser.add_argument('-file', action="store", default="data/test1.txt")
+    parser.add_argument('-file', action="store", default="data/doc.txt")
     args = parser.parse_args()
     filename = args.file
 

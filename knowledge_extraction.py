@@ -5,6 +5,9 @@ import Levenshtein
 from urllib.parse import quote
 from config import SPOTLIGHT_API_URL, BABELFY_API_URL, BABELFY_API_KEY, LOV_API
 
+from ollama import chat
+from ollama import ChatResponse
+
 nlp = spacy.load("en_core_web_sm")
 # export OPENAI_API_KEY="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"
 
@@ -27,6 +30,16 @@ def ask_the_llm(prompt):
         return f"[ERROR] No se pudo conectar con Ollama: {e}"
 
 
+def chat_with_llm(prompt):
+    response: ChatResponse = chat(model='llama3', messages=[
+        {
+            'role': 'user',
+            'content': prompt,
+        },
+    ])
+    return response.message.content
+
+
 def extract_triplets_llm(sentence):
     prompt = f"""
 Extract RDF-style triples from the following sentence:
@@ -38,7 +51,7 @@ Only return the extracted RDF triples in the format:
 Do NOT add any explanations or comments.
 Do NOT return anything else.
 """
-    return ask_the_llm(prompt)
+    return chat_with_llm(prompt)
 
 
 def extend_text_llm(text):
@@ -49,7 +62,7 @@ Understand the following text, and extend any contractions that exist, e.g. dete
 Do NOT add any explanations or comments.
 Do NOT return anything else.
 """
-    return ask_the_llm(prompt)
+    return chat_with_llm(prompt)
 
 
 def get_babelfy_url(text: str) -> str:
@@ -79,15 +92,25 @@ def entity_linking_spotlight(text):
 def entity_linking_babelfy(text):
     try:
         headers = {"accept": "application/json"}
+        print("URL", get_babelfy_url(text))
         response = requests.get(get_babelfy_url(text), headers=headers)
 
         if (response.status_code == 200):
             data = response.json()
-            max_resource = max(
-                data, key=lambda resource: resource['globalScore'])
-            best_resource = max_resource['DBpediaURL'] if data != [] else ''
 
-            return best_resource
+            entityURI = None
+            distance = 1000
+            for res in data:
+                uri = res["DBpediaURL"]
+                uriTmp = uri.rsplit('/', 1)[1]
+                temp = get_levenshtein(text, uriTmp)
+                simil = 1 - ((temp) / max(len(text), len(uriTmp)))
+                print(text, uriTmp, temp, simil)
+                if (temp < distance):
+                    distance = temp
+                    entityURI = uri
+
+            return entityURI
         return None
     except Exception as error:
         print(error)
@@ -103,12 +126,18 @@ def get_levenshtein(wordA, wordB):
 def get_most_similar(predicate, results):
     predicateURI = None
     distance = 1000
+    print("Predicate", predicate)
     for res in results:
         uri = res["uri"][0]
-        temp = get_levenshtein(predicate, uri.rsplit('/', 1)[1])
+        real = uri.rsplit('/', 1)[1]
+        temp = get_levenshtein(predicate, real)
+        simil = 1 - (temp) / max(len(predicate), len(real))
+        print(predicate, uri, temp, simil)
+
         if (temp < distance):
             distance = temp
             predicateURI = uri
+    print("\n")
 
     return predicateURI
 
