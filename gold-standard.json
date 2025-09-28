@@ -1,0 +1,312 @@
+[
+    {
+        "text": "Marie Curie was a Polish-French physicist and chemist known for her research on radioactivity.",
+        "triples": [
+            [
+                "Marie Curie",
+                "was",
+                "physicist"
+            ],
+            [
+                "Marie Curie",
+                "was",
+                "chemist"
+            ],
+            [
+                "Marie Curie",
+                "was",
+                "Polish-French"
+            ],
+            [
+                "Marie Curie",
+                "known for",
+                "research on radioactivity"
+            ]
+        ]
+    },
+    {
+        "text": "Isaac Newton was born in 1643 and is famous for his laws of motion.",
+        "triples": [
+            [
+                "Isaac Newton",
+                "was born in",
+                "1643"
+            ],
+            [
+                "Isaac Newton",
+                "is famous for",
+                "laws of motion"
+            ]
+        ]
+    },
+    {
+        "text": "Albert Einstein developed the theory of relativity and received the Nobel Prize in Physics in 1921.",
+        "triples": [
+            [
+                "Albert Einstein",
+                "developed",
+                "theory of relativity"
+            ],
+            [
+                "Albert Einstein",
+                "received",
+                "Nobel Prize in Physics"
+            ]
+        ]
+    },
+    {
+        "text": "Ada Lovelace is considered the first computer programmer.",
+        "triples": [
+            [
+                "Ada Lovelace",
+                "is considered",
+                "first computer programmer"
+            ]
+        ]
+    },
+    {
+        "text": "Charles Darwin proposed the theory of evolution by natural selection.",
+        "triples": [
+            [
+                "Charles Darwin",
+                "proposed",
+                "theory of evolution by natural selection"
+            ]
+        ]
+    },
+    {
+        "text": "Galileo Galilei improved the telescope and made astronomical observations.",
+        "triples": [
+            [
+                "Galileo Galilei",
+                "improved",
+                "telescope"
+            ],
+            [
+                "Galileo Galilei",
+                "made",
+                "astronomical observations"
+            ]
+        ]
+    },
+    {
+        "text": "Nikola Tesla invented the alternating current (AC) system.",
+        "triples": [
+            [
+                "Nikola Tesla",
+                "invented",
+                "alternating current (AC) system"
+            ]
+        ]
+    },
+    {
+        "text": "Thomas Edison created the first practical light bulb.",
+        "triples": [
+            [
+                "Thomas Edison",
+                "created",
+                "first practical light bulb"
+            ]
+        ]
+    },
+    {
+        "text": "Rosalind Franklin contributed to the discovery of DNA structure.",
+        "triples": [
+            [
+                "Rosalind Franklin",
+                "contributed to",
+                "discovery of DNA structure"
+            ]
+        ]
+    },
+    {
+        "text": "Stephen Hawking wrote 'A Brief History of Time' and studied black holes.",
+        "triples": [
+            [
+                "Stephen Hawking",
+                "wrote",
+                "'A Brief History of Time'"
+            ],
+            [
+                "Stephen Hawking",
+                "studied",
+                "black holes"
+            ]
+        ]
+    },
+    {
+        "text": "Jane Goodall is known for her work with chimpanzees in Tanzania.",
+        "triples": [
+            [
+                "Jane Goodall",
+                "is known for",
+                "work with chimpanzees in Tanzania"
+            ]
+        ]
+    },
+    {
+        "text": "Gregor Mendel is regarded as the father of modern genetics.",
+        "triples": [
+            [
+                "Gregor Mendel",
+                "is regarded as",
+                "father of modern genetics"
+            ]
+        ]
+    },
+    {
+        "text": "Dmitri Mendeleev created the periodic table of elements.",
+        "triples": [
+            [
+                "Dmitri Mendeleev",
+                "created",
+                "periodic table of elements"
+            ]
+        ]
+    },
+    {
+        "text": "Rachel Carson wrote 'Silent Spring' and influenced environmental policy.",
+        "triples": [
+            [
+                "Rachel Carson",
+                "wrote",
+                "'Silent Spring'"
+            ],
+            [
+                "Rachel Carson",
+                "influenced",
+                "environmental policy"
+            ]
+        ]
+    },
+    {
+        "text": "Alan Turing was a pioneer of computer science and helped crack Nazi codes.",
+        "triples": [
+            [
+                "Alan Turing",
+                "was",
+                "pioneer of computer science"
+            ],
+            [
+                "Alan Turing",
+                "helped crack",
+                "Nazi codes"
+            ]
+        ]
+    },
+    {
+        "text": "Carl Sagan promoted science communication and authored 'Cosmos'.",
+        "triples": [
+            [
+                "Carl Sagan",
+                "promoted",
+                "science communication"
+            ],
+            [
+                "Carl Sagan",
+                "authored",
+                "'Cosmos'"
+            ]
+        ]
+    },
+    {
+        "text": "Barbara McClintock discovered genetic transposition.",
+        "triples": [
+            [
+                "Barbara McClintock",
+                "discovered",
+                "genetic transposition"
+            ]
+        ]
+    },
+    {
+        "text": "Tim Berners-Lee invented the World Wide Web in 1989.",
+        "triples": [
+            [
+                "Tim Berners-Lee",
+                "invented",
+                "World Wide Web"
+            ]
+        ]
+    },
+    {
+        "text": "Florence Nightingale improved sanitary conditions in hospitals.",
+        "triples": [
+            [
+                "Florence Nightingale",
+                "improved",
+                "sanitary conditions in hospitals"
+            ]
+        ]
+    },
+    {
+        "text": "Louis Pasteur developed the process of pasteurization.",
+        "triples": [
+            [
+                "Louis Pasteur",
+                "developed",
+                "process of pasteurization"
+            ]
+        ]
+    },
+    {
+        "text": "Gregor Mendel conducted experiments on pea plants.",
+        "triples": [
+            [
+                "Gregor Mendel",
+                "conducted",
+                "experiments on pea plants"
+            ]
+        ]
+    },
+    {
+        "text": "James Watson and Francis Crick proposed the double helix structure of DNA.",
+        "triples": [
+            [
+                "James Watson and Francis Crick",
+                "proposed",
+                "double helix structure of DNA"
+            ]
+        ]
+    },
+    {
+        "text": "Katherine Johnson calculated flight trajectories for NASA.",
+        "triples": [
+            [
+                "Katherine Johnson",
+                "calculated",
+                "flight trajectories for NASA"
+            ]
+        ]
+    },
+    {
+        "text": "George Washington Carver promoted crop rotation and agricultural innovation.",
+        "triples": [
+            [
+                "George Washington Carver",
+                "promoted",
+                "crop rotation"
+            ],
+            [
+                "George Washington Carver",
+                "promoted",
+                "agricultural innovation"
+            ]
+        ]
+    },
+    {
+        "text": "Emmy Noether made significant contributions to abstract algebra and theoretical physics.",
+        "triples": [
+            [
+                "Emmy Noether",
+                "made significant contributions to",
+                "abstract algebra"
+            ],
+            [
+                "Emmy Noether",
+                "made significant contributions to",
+                "theoretical physics"
+            ]
+        ]
+    }
+]
